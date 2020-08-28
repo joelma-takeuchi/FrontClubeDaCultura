@@ -1,4 +1,7 @@
 
 .txtnav{
-    color: #58705F ;
+    color: white ;
+}
+nav{
+    background-image: linear-gradient(-90deg,#c0ac92,#a28671);
 }
