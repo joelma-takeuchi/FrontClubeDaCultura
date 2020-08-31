@@ -1,6 +1,11 @@
-/*Estilos da página Sobre */
 
-.br-50 {
-    border-radius: 50%;
+.name {
+    color: rgb(243, 24, 24);
+    border-bottom: solid 1px  rgb(246, 69, 84);
+    padding-bottom: 5px;
+    margin-top: 10px;
 }
+ 
+
+    
 
