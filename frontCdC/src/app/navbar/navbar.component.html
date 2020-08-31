@@ -14,7 +14,7 @@
 
 
                 <li class="nav-item">
-                    <a class="navbar-brand p-3 txtnav   " routerLink='/home'>HOME</a>
+                    <a class="navbar-brand p-3 txtnav " routerLink='/home'>HOME</a>
                 </li>
                 <li class="nav-item">
                     <a class="navbar-brand p-3 txtnav ml-3" routerLink='/sobre'>SOBRE</a>
@@ -28,9 +28,14 @@
                 </li>
 
             </ul>
-        
+        <div *ngIf='auth.btnLogin()'>            
+            <button type="button" class="btn btn-outline-light" routerLink='/login'>LOGIN</button>
+        </div>
+        <div *ngIf='auth.btnSair()'>            
+            <button type="button" class="btn btn-outline-light" routerLink='/login'(click)='sair()'>SAIR</button>
+        </div>
 
-        <button type="button" class="btn btn-outline-light">LOGIN</button>
+        
 
     </div>
 
