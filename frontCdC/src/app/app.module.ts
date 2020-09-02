@@ -14,6 +14,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { PlanosComponent } from './planos/planos.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     ContatoComponent,
     PlanosComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
