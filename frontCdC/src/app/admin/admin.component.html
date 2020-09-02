@@ -22,9 +22,12 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1>FORMULARIO</h1>
+                            <input type="text" class="form-control" id="descricao "placeholder="Digite aqui o tipo" [(ngModel)]='categoria.tipo'>
+                            <input type="text" class="form-control" id="nome "placeholder="Digite aqui a quantidade" [(ngModel)]='categoria.quantidade'>
+                            <input type="text " class="form-control" id="tema "placeholder="Digite aqui o valor" [(ngModel)]='categoria.valor'>
                         </div>
                     </div>
-
+                    <button type="button" class="btn btn-outline-info w-25"(click)='cadastrarCategoria()'>Cadastrar</button>
                     <hr>
                     <div class="row">
                         <div class="col-md-12">
@@ -67,11 +70,16 @@
                             <h1>Cadastrar um novo produto</h1>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
+                    <div class="row ">
+                        <div class="col-md-12 ">
                             <h1>FORMULARIO</h1>
-                        </div>
+                            
+                            <input type="text" class="form-control" id="descricao "placeholder="Digite aqui a descrição" [(ngModel)]='produto.descricao'>
+                            <input type="text" class="form-control" id="nome "placeholder="Digite aqui o nome do produto" [(ngModel)]='produto.nome'>
+                            <input type="text " class="form-control" id="tema "placeholder="Digite aqui o tema do produto" [(ngModel)]='produto.tema'>
+                         </div>
                     </div>
+                    <button type="button" class="btn btn-outline-info w-25"(click)='cadastrar()'>Cadastrar</button>
                     <hr> 
                     <div class="row">
                         <div class="col-md-12">

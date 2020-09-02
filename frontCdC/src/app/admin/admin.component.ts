@@ -43,5 +43,30 @@ export class AdminComponent implements OnInit {
       this.categoria = resp;
     })
   }
+  cadastrar(){
+    if(this.produto.descricao == null || this.produto.nome == null || this.produto.tema == null){
+      alert("Preencha todos os campos!")
+    }else {
+      this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
+        this.produto = resp
+        this.produto = new Produto
+        alert ('Produto Cadastrado com sucesso!')
+        this.findAllProduto
+      })
+    }
+    
+  }
+  cadastrarCategoria(){
+    if(this.categoria.tipo == null || this.categoria.quantidade == null || this.categoria.valor == null){
+      alert("Preencha todos os campos!")
+    }else {
+      this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
+        this.categoria = resp
+        this.categoria = new Categoria()
+        alert ('Produto Cadastrado com sucesso!')
+        this.findAllCategoria
+      })            
+    }
+}
 
 }
