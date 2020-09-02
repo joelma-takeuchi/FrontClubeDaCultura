@@ -18,7 +18,7 @@
                <label for="categoria">Escolha sua Box</label>
                <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria' (change) = 'findByIdCategoria()'>
                <option *ngFor='let item of listaCategoria' value={{item.id}} >
-                {{item.descricao}}
+                {{item.tipo}}
                </option>
               </select>
               </div>
