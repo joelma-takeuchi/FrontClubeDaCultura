@@ -7,6 +7,10 @@ import { PlanosComponent } from './planos/planos.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { AdminComponent } from './admin/admin.component';
+import { PutProdutoComponent } from './put-produto/put-produto.component';
+import { DelProdutoComponent } from './del-produto/del-produto.component';
+import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
+import { DelCategoriaComponent } from './del-categoria/del-categoria.component';
 
 
 const routes: Routes = [
@@ -17,7 +21,11 @@ const routes: Routes = [
   {path: 'planos', component: PlanosComponent},
   {path: 'login', component: LoginComponent},
   {path: 'cadastro', component: CadastroComponent},
-  {path: 'admin', component: AdminComponent}
+  {path: 'admin', component: AdminComponent},
+  {path: 'editar-produto/:id', component: PutProdutoComponent},
+  {path: 'del-produto/:id', component: DelProdutoComponent},
+  {path: 'editar-categoria/:id', component: PutCategoriaComponent},
+  {path:"del-categoria/:id",component: DelCategoriaComponent}
 ];
 
 @NgModule({

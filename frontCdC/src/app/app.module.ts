@@ -15,6 +15,10 @@ import { PlanosComponent } from './planos/planos.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { AdminComponent } from './admin/admin.component';
+import { PutProdutoComponent } from './put-produto/put-produto.component';
+import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
+import { DelProdutoComponent } from './del-produto/del-produto.component';
+import { DelCategoriaComponent } from './del-categoria/del-categoria.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { AdminComponent } from './admin/admin.component';
     PlanosComponent,
     LoginComponent,
     CadastroComponent,
-    AdminComponent
+    AdminComponent,
+    PutProdutoComponent,
+    PutCategoriaComponent,
+    DelProdutoComponent,
+    DelCategoriaComponent
   ],
   imports: [
     BrowserModule,

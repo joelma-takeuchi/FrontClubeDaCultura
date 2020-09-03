@@ -46,8 +46,8 @@
                                         <td>{{item.quantidade}}</td>
                                         <td>{{item.valor}}</td>
                                         <td class="d-flex justify-content-end">
-                                            <a class="btn btn-outline-info mr-3">Editar</a>
-                                            <a class="btn btn-outline-danger">Apagar</a>
+                                            <a class="btn btn-outline-info mr-3"[routerLink]="['/editar-categoria', item.id]">Editar</a>
+                                            <a class="btn btn-outline-danger"[routerLink]="['/del-categoria', item.id]">Apagar</a>
                                         </td>
                                     </tr>
 
@@ -98,8 +98,8 @@
                                         <td>{{item.descricao}}</td>
                                         <td>{{item.tema}}</td>
                                         <td class="d-flex justify-content-end">
-                                            <a class="btn btn-outline-info mr-3">Editar</a>
-                                            <a class="btn btn-outline-danger">Apagar</a>
+                                            <a class="btn btn-outline-info mr-3" [routerLink]="['/editar-produto', item.id]">Editar</a>
+                                            <a class="btn btn-outline-danger"[routerLink]="['/del-produto', item.id]">Apagar</a>
                                         </td>
                                     </tr>
 
