@@ -69,5 +69,8 @@
   border-radius: 30%;
 }
 
-    
+.text-color {
+  color: #a75a12;
+  cursor: pointer;
+}
 
