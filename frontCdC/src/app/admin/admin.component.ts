@@ -3,6 +3,7 @@ import { Produto } from '../model/Produto';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -20,7 +21,9 @@ export class AdminComponent implements OnInit {
 
   constructor(
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -52,6 +55,7 @@ export class AdminComponent implements OnInit {
         this.produto = new Produto
         alert ('Produto Cadastrado com sucesso!')
         this.findAllProduto
+        this.router.navigate(['/admin'])
       })
     }
     
@@ -62,9 +66,11 @@ export class AdminComponent implements OnInit {
     }else {
       this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
         this.categoria = resp
-        this.categoria = new Categoria()
-        alert ('Produto Cadastrado com sucesso!')
+        this.categoria = new Categoria        
+        alert ('Categoria cadastrada com sucesso!')        
         this.findAllCategoria
+        this.router.navigate(['/admin'])
+                
       })            
     }
 }
