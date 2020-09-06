@@ -6,6 +6,7 @@
 .bg-style{
     background-color: #f6ffff;
 }
+
 .img-wrapper {
     position: relative;
    }
@@ -60,17 +61,19 @@
     -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
     filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
 }
+
 .imagem4{
   transition: all .5s;
   border: 10px solid transparent;
 }
+
 .imagem4:hover{
   border: 10px solid #136497;
   border-radius: 30%;
 }
+
 .bg1{
-  background-image: url("https://i.imgur.com/wodWo0u.jpg");
-  
+  background-image: url("https://i.imgur.com/0j5VNY2.jpg");
 }
     
 
