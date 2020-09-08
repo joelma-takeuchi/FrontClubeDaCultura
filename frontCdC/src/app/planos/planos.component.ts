@@ -44,4 +44,5 @@ export class PlanosComponent implements OnInit {
       this.categoria = resp;
     })
   }
+  
 }

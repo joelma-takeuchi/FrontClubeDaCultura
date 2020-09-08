@@ -19,6 +19,7 @@ import { PutProdutoComponent } from './put-produto/put-produto.component';
 import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
 import { DelProdutoComponent } from './del-produto/del-produto.component';
 import { DelCategoriaComponent } from './del-categoria/del-categoria.component';
+import { DadosComponent } from './dados/dados.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DelCategoriaComponent } from './del-categoria/del-categoria.component';
     PutProdutoComponent,
     PutCategoriaComponent,
     DelProdutoComponent,
-    DelCategoriaComponent
+    DelCategoriaComponent,
+    DadosComponent
   ],
   imports: [
     BrowserModule,

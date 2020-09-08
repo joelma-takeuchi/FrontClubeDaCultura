@@ -11,6 +11,7 @@ import { PutProdutoComponent } from './put-produto/put-produto.component';
 import { DelProdutoComponent } from './del-produto/del-produto.component';
 import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
 import { DelCategoriaComponent } from './del-categoria/del-categoria.component';
+import { DadosComponent } from './dados/dados.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,9 @@ const routes: Routes = [
   {path: 'editar-produto/:id', component: PutProdutoComponent},
   {path: 'del-produto/:id', component: DelProdutoComponent},
   {path: 'editar-categoria/:id', component: PutCategoriaComponent},
-  {path:"del-categoria/:id",component: DelCategoriaComponent}
+  {path:"del-categoria/:id",component: DelCategoriaComponent},
+  {path:"dados/:id",component: DadosComponent}
+
 ];
 
 @NgModule({
