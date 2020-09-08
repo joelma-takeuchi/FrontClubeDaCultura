@@ -1,7 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
 import {FormsModule} from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
 import { DelProdutoComponent } from './del-produto/del-produto.component';
 import { DelCategoriaComponent } from './del-categoria/del-categoria.component';
 import { DadosComponent } from './dados/dados.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +39,17 @@ import { DadosComponent } from './dados/dados.component';
     PutCategoriaComponent,
     DelProdutoComponent,
     DelCategoriaComponent,
-    DadosComponent
+    DadosComponent,
+    AlertasComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

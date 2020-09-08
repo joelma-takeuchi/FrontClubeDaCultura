@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-put-categoria',
@@ -15,7 +16,8 @@ export class PutCategoriaComponent implements OnInit {
   constructor(
     private categoriaService: CategoriaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -33,10 +35,10 @@ export class PutCategoriaComponent implements OnInit {
     this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria) =>{
       this.categoria = resp
       this.router.navigate(['/admin'])
-      alert('Produto alterado com sucesso!')
+      this.alert.showAlertSuccess('Produto alterado com sucesso!')
     }, err => {
       if(err.status == '500'){
-        alert('Preencha todos os campos')
+        this.alert.showAlertInfo('Preencha todos os campos')
       }
     })
   }

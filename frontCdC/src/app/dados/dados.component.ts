@@ -15,8 +15,6 @@ export class DadosComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private categoriaService: CategoriaService
-
-
   ) { }
 
   ngOnInit() {
