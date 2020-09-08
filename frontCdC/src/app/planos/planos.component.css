@@ -6,3 +6,7 @@
 .bg-warning{
     opacity: 0.5
 }
+
+ul li{
+    margin-bottom: 10px;
+}

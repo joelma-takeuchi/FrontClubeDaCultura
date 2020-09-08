@@ -5,12 +5,7 @@
 <!--CARD-->
 
 
-<!-- <div class="card mt-5" *ngFor='let item of listaProduto'>
-            <img src="https://i.imgur.com/9XIUgrh.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{item.titulo}}</h5>
-              <p class="card-text"> {{item.produto.descricao}}</p>            
-           </div> -->
+
 
 <div class="container mt-5">
   <div class="row justify-content-center">
@@ -21,70 +16,33 @@
 
 
   <!--cards planos-->
-  <div class="row d-flex justify-content-center mt-5">
-    <div class="col-sm-4 mt-5">
-      <div class="card">
+  <div class="row mt-5 d-flex justify-content-center">
+    <div class="col-md-4 " *ngFor ='let item of listaCategoria'> 
+      
+      <div class="card" >
         <div class="card-body">
-          <h2 class="display-5 text-warning">BOX PEQUENA</h2>
-          <h3 class= "font-weight-bold ">R$ 69,99 / mensal</h3>
+          <h2 class="display-5 text-warning text-uppercase">{{item.tipo}}</h2>
+          <h3 class= "font-weight-bold ">R$ {{item.valor}}/ mensal</h3>
          
             <p class="font-weight-lighter mt-4">• Fidelidade mínima de 3 meses.</p>
             <p class="font-weight-lighter">• Cobrança automática no cartão de crédito</p>
-          
+            <div class="d-flex justify-content-center ">
+              <button class="btn btn-responsive btn-warning w-50 mt-4 mb-4 " [routerLink]="['/dados', item.id]"
+              >Assine Já!</button>              
+            </div>
+                      
          
         </div>
       </div>
     </div>
+    </div>
+  
 
-    <div class="col-sm-4 mt-5">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="display-5 text-warning">BOX MÉDIA</h2>
-          <h3 class= "font-weight-bold ">R$ 89,99 / mensal</h3>
-         
-            <p class="font-weight-lighter mt-4">• Fidelidade mínima de 3 meses.</p>
-            <p class="font-weight-lighter">• Cobrança automática no cartão de crédito</p>
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-4 mt-5">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="display-5 text-warning">BOX GRANDE</h2>
-          <h3 class= "font-weight-bold ">R$ 119,99/ mensal</h3>
-         
-            <p class="font-weight-lighter mt-4">• Fidelidade mínima de 3 meses.</p>
-            <p class="font-weight-lighter">• Cobrança automática no cartão de crédito</p>
-        </div>
-      </div>
-    </div>
-    <!--/card planos-->
+    <hr class="mt-5 ">
 
     
-  <div class="container d-flex justify-content-center mt-5">
-    <h3>Seja membro do clube</h3>
-  </div>
-
-    <div class="container mt-2">     
-      <div class="row d-flex aling-items-center mb-5">
-        <div class="col-md-12">
-          <div class="form-group m-0 ">
-            <label for="categoria ">Escolha sua Box</label>
-            <select name="categoria" id="categoria" class="form-control border border-warning text-white font-weight-bold " [(ngModel)]='idCategoria'
-              (change)='findByIdCategoria()'>
-              <option *ngFor='let item of listaCategoria ' value={{item.id}}>
-                {{item.tipo}}
-              </option>
-            </select>
-          </div>    
-          <div class="img-overlay mt-3 d-flex justify-content-center">
-
-            <button class="btn btn-responsive btn-warning " routerLink='/dados'>Assine Já!</button>
-        </div>    
-  </div>
-
+    <!-------------------------------CARDs------------------------------------------------>
+  
     <!--vantagens-->
 
     <div class="container mt-5 ">
@@ -101,7 +59,7 @@
 
           
           <ul style="list-style-type:disc text-dark font-weight-bold mb-4">
-            <li>Frete grátis para as regiões Sul, Sudeste e Centro-Oeste</li>
+            <li >Frete grátis para as regiões Sul, Sudeste e Centro-Oeste</li>
             <li>Entrega expressa por transportadora (95% dos kits)</li>
             <li>Receba todo mês de 5 a 6 produtos locais, cada kit de uma região diferente</li>
             <li>Produtos artesanais de pequenos produtores e da agroindústria familiar</li>

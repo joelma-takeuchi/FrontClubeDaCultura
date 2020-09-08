@@ -51,7 +51,7 @@ export class AdminComponent implements OnInit {
         this.produto = resp
         this.produto = new Produto
         alert ('Produto Cadastrado com sucesso!')
-        this.findAllProduto
+        this.findAllProduto()
       })
     }
     
@@ -64,7 +64,7 @@ export class AdminComponent implements OnInit {
         this.categoria = resp
         this.categoria = new Categoria()
         alert ('Produto Cadastrado com sucesso!')
-        this.findAllCategoria
+        this.findAllCategoria()
       })            
     }
 }
