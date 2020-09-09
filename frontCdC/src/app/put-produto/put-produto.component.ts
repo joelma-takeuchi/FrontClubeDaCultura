@@ -3,6 +3,7 @@ import { Produto } from '../model/Produto';
 import { Categoria } from '../model/Categoria';
 import { ProdutoService } from '../service/produto.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-put-produto',
@@ -18,7 +19,8 @@ export class PutProdutoComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -36,10 +38,10 @@ export class PutProdutoComponent implements OnInit {
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto) =>{
       this.produto = resp
       this.router.navigate(['/admin'])
-      alert('Produto alterado com sucesso!')
+      this.alert.showAlertSuccess('Produto alterado com sucesso!')
     }, err => {
       if(err.status == '500'){
-        alert('Preencha todos os campos')
+        this.alert.showAlertInfo('Preencha todos os campos')
       }
     })
   }

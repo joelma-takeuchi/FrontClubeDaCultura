@@ -4,6 +4,7 @@ import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-admin',
@@ -23,7 +24,8 @@ export class AdminComponent implements OnInit {
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -48,29 +50,27 @@ export class AdminComponent implements OnInit {
   }
   cadastrar(){
     if(this.produto.descricao == null || this.produto.nome == null || this.produto.tema == null){
-      alert("Preencha todos os campos!")
+      this.alert.showAlertInfo("Preencha todos os campos!")
     }else {
       this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
         this.produto = resp
         this.produto = new Produto
-        alert ('Produto Cadastrado com sucesso!')
-        this.findAllProduto
-        this.router.navigate(['/admin'])
+        this.alert.showAlertSuccess('Produto Cadastrado com sucesso!')
+        this.findAllProduto()
+        
       })
     }
     
   }
   cadastrarCategoria(){
     if(this.categoria.tipo == null || this.categoria.quantidade == null || this.categoria.valor == null){
-      alert("Preencha todos os campos!")
+      this.alert.showAlertInfo("Preencha todos os campos!")
     }else {
       this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
         this.categoria = resp
         this.categoria = new Categoria        
-        alert ('Categoria cadastrada com sucesso!')        
-        this.findAllCategoria
-        this.router.navigate(['/admin'])
-                
+        this.alert.showAlertSuccess('Categoria cadastrada com sucesso!')        
+        this.findAllCategoria()                
       })            
     }
 }
