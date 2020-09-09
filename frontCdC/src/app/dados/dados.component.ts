@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-dados',
@@ -14,7 +15,8 @@ export class DadosComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -25,6 +27,9 @@ export class DadosComponent implements OnInit {
     this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria) =>{
       this.categoria = resp;
     })
+  }
+  finalizar(){
+    this.alert.showAlertSuccess('Compra finalizada com sucesso!')
   }
 
 }
