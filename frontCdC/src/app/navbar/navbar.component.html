@@ -17,15 +17,17 @@
                     <a class="navbar-brand p-3 txtnav " routerLink='/home'>HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="navbar-brand p-3 txtnav ml-3" routerLink='/sobre'>SOBRE</a>
-
+                    <a class="navbar-brand p-3 txtnav ml-3 " routerLink='/planos'>PLANOS</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="navbar-brand p-3 txtnav ml-3" routerLink='/sobre'>SOBRE</a>
+                </li>
+                
                 <li class="nav-item">
                     <a class="navbar-brand p-3 txtnav ml-3 " routerLink='/contato'>CONTATO</a>
                 </li>
-                <li class="nav-item">
-                    <a class="navbar-brand p-3 txtnav ml-3 " routerLink='/planos'>PLANOS</a>
-                </li>
+                
                 <div *ngIf='auth.admin()'>
                     <li class="nav-item">
                         <a class="navbar-brand p-3 txtnav ml-3 " routerLink='/admin'>ADMIN</a>
