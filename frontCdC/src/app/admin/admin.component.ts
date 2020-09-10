@@ -32,6 +32,11 @@ export class AdminComponent implements OnInit {
     window.scroll(0,0)
     this.findAllProduto()
     this.findAllCategoria()
+    let email = localStorage.getItem('email')
+    if(email != 'admin@gmail.com'){
+      this.alert.showAlertInfo("Area não encontrada")
+      this.router.navigate(['/planos'])
+    }
   }
   findAllProduto(){
     this.produtoService.getAllProduto().subscribe((resp: Produto[]) =>{

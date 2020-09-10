@@ -14,12 +14,13 @@
       
       <div class="card" >
         <div class="card-body">
-          <h2 class="display-5 text-warning text-uppercase">{{item.tipo}}</h2>
+          <h2 class="display-5 text-warning text-uppercase font-weight-bold">{{item.tipo}}</h2>
           <h3 class= "font-weight-bold ">R$ {{item.valor}}/ mensal</h3>
-         
-            <p class="font-weight-lighter mt-4">• Fidelidade mínima de 3 meses.</p>
+
+            <p class="font-weight-lighter mt-3">• Essa box contém {{item.quantidade}} itens</p>
+            <p class="font-weight-lighter ">• Fidelidade mínima de 3 meses.</p>
             <p class="font-weight-lighter">• Cobrança automática no cartão de crédito</p>
-            <p class="font-weight-lighter">• Essa box contém {{item.quantidade}} itens</p>
+            
             <div class="d-flex justify-content-center" *ngIf='logado;else deslogado'>
               <button class="btn btn-responsive btn-warning w-50 mt-4 mb-4 " [routerLink]="['/dados', item.id]"
               >Assine Já!</button>              
@@ -58,17 +59,16 @@
 
 
         <div class="col-md-6">
-          <h3 class="text-center mb-3">Vantagens em Assinar</h3>
+          <h3 class="text-center mb-4">Vantagens em Assinar</h3>
 
           
-          <ul style="list-style-type:disc text-dark font-weight-bold mb-4">
-            <li >Frete grátis para as regiões Sul, Sudeste e Centro-Oeste</li>
+          <ul style="list-style-type:disc text-dark font-weight-bold ">
+            <li >Frete grátis para todo o Brasil</li>
             <li>Entrega expressa por transportadora (95% dos kits)</li>
-            <li>Receba todo mês de 5 a 6 produtos locais, cada kit de uma região diferente</li>
+            <li>Receba todo mês de 4 a 6 produtos locais, cada kit de uma região diferente</li>
             <li>Produtos artesanais de pequenos produtores e da agroindústria familiar</li>
             <li>Acompanha folder com a descrição dos produtores + um mimo exclusivo</li>
-            <li>Pause ou cancele sua assinatura quando quiser</li>
-            <li>Envio da próxima caixa dia 07/10/20</li>
+            <li>Envio da próxima caixa dia 07/10/2020</li>
 
           </ul>
         
