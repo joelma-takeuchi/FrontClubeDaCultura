@@ -17,6 +17,7 @@ export class PlanosComponent implements OnInit {
   categoria: Categoria = new Categoria()
   listaCategoria: Categoria[]
   idCategoria: number
+  logado: boolean = false
   
   constructor(
     private produtoService: ProdutoService,
@@ -24,9 +25,12 @@ export class PlanosComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    window.scroll(0,0)
-    this.findAllProduto()
+    window.scroll(0,0)    
     this.findAllCategoria()
+    let token = localStorage.getItem("token")
+    if(token != null){
+      this.logado = true
+    }
   }
 
   findAllProduto(){

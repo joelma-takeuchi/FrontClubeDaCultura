@@ -7,6 +7,7 @@ import { AlertasService } from '../service/alertas.service';
   styleUrls: ['./contato.component.css']
 })
 export class ContatoComponent implements OnInit {
+  logado: boolean = false
 
   constructor(
     private alert: AlertasService
@@ -14,6 +15,10 @@ export class ContatoComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0)
+    let token = localStorage.getItem("token")
+    if(token != null){
+      this.logado = true
+    }
   }
   enviar(){
     this.alert.showAlertSuccess('Enviado com sucesso!')

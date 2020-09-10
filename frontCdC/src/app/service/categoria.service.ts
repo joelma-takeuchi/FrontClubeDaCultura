@@ -13,7 +13,7 @@ export class CategoriaService {
     headers: new HttpHeaders().set('Authorization', localStorage.getItem('token'))
   }
   getAllCategoria(){
-    return this.http.get('http://localhost:9000/categoria',this.token)
+    return this.http.get('http://localhost:9000/categoria')
   }
   getByIdCategoria(id: number){
     return this.http.get(`http://localhost:9000/categoria/${id}`,this.token)

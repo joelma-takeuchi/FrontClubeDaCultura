@@ -3,6 +3,7 @@ import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
 import { UserLogin } from '../model/UserLogin';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-login',
@@ -16,10 +17,16 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alert: AlertasService
   ) { }
 
   ngOnInit(){
+    let token = localStorage.getItem("token")
+    if(token != null){
+      this.alert.showAlertInfo("Você ja está logado.")
+      this.router.navigate(['/planos'])
+    }
   }
   entrar(){
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin) =>{
