@@ -35,7 +35,7 @@ export class PutCategoriaComponent implements OnInit {
     this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria) =>{
       this.categoria = resp
       this.router.navigate(['/admin'])
-      this.alert.showAlertSuccess('Produto alterado com sucesso!')
+      this.alert.showAlertSuccess('Categoria alterado com sucesso!')
     }, err => {
       if(err.status == '500'){
         this.alert.showAlertInfo('Preencha todos os campos')
